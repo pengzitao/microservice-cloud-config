@@ -1,0 +1,45 @@
+﻿#注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
+spring:
+  profiles:
+    active: dev # 激活开发环境配置
+---
+server:
+  port: 6001
+
+eureka:
+  instance:
+    hostname: eureka6001.com
+  client:
+    register-with-eureka: false #是否将自己注册到Eureka服务中
+    fetch-registry: false #是否调用其它微服务
+    service-url:
+      #单机版则设置自己的地址
+#      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #集群版则设置另一个注册中心的地址 (逗号多个)
+      defaultZone: http://eureka6002.com:6002/eureka/
+  server:
+    # 是否开启保护机制？（将过时的服务保留的意思）
+    # 测试阶段介意关闭，生产环境介意开启
+    # 如关闭后发生网络问题，服务没有发送心跳给注册中心，则会被注销
+    enable-self-preservation: false # 禁用自我保护机制******
+---
+server:
+  port: 6001
+
+eureka:
+  instance:
+    hostname: eureka6001.com
+  client:
+    register-with-eureka: false #是否将自己注册到Eureka服务中
+    fetch-registry: false #是否调用其它微服务
+    service-url:
+      #单机版则设置自己的地址
+#      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #集群版则设置另一个注册中心的地址 (逗号多个)
+      defaultZone: http://eureka6002.com:6002/eureka/
+  server:
+    # 是否开启保护机制？（将过时的服务保留的意思）
+    # 测试阶段介意关闭，生产环境介意开启
+    # 如关闭后发生网络问题，服务没有发送心跳给注册中心，则会被注销
+    enable-self-preservation: true # 开启自我保护机制******
+
