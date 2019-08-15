@@ -5,6 +5,7 @@ spring:
 ---
 spring:
   application:
+  profiles: dev # 开发环境
     name: microservice-product
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -47,6 +48,7 @@ eureka:
 #    instance-id: ${spring.application.name}:${server.port}
 ---
 spring:
+  profiles: prod # 开发环境
   application:
     name: microservice-product
   datasource:
