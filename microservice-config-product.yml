@@ -4,8 +4,8 @@ spring:
     active: dev # 激活开发环境配置
 ---
 spring:
-  profiles:
-    active: dev # 激活开发环境配置  application:
+  profiles: dev # 激活开发环境配置  
+  application:
     name: microservice-product
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -48,8 +48,7 @@ eureka:
 #    instance-id: ${spring.application.name}:${server.port}
 ---
 spring:
-  profiles:
-    active: prod # 激活开发环境配置
+  profiles: dev # 激活开发环境配置  
   application:
     name: microservice-product
   datasource:
