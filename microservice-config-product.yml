@@ -4,7 +4,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 spring:
-  profiles: prod # 激活开发环境配置  
+  profiles: dev # 激活开发环境配置  
   application:
     name: microservice-product
   datasource:
@@ -48,7 +48,7 @@ eureka:
 #    instance-id: ${spring.application.name}:${server.port}
 ---
 spring:
-  profiles: dev # 激活开发环境配置  
+  profiles: prod # 激活开发环境配置  
   application:
     name: microservice-product
   datasource:
